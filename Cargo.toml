@@ -1,0 +1,26 @@
+[package]
+name = "xxhash-cli"
+version = "0.8.0"
+edition = "2021"
+repository = "https://github.com/DoumanAsh/xxhash-cli"
+description = "XXHash CLI utility"
+keywords = ["hash", "xxhash", "xxh3"]
+license = "BSL-1.0"
+readme = "README.md"
+
+[dependencies.lolid]
+version = "2"
+default-features = false
+
+[dependencies.arg]
+version = "0.3.1"
+features = ["std"]
+
+[dependencies.xxhash-rust]
+version = "0.8.6"
+features = ["xxh3", "xxh64", "xxh32"]
+
+[profile.release]
+lto = 'thin'
+opt-level = "s"
+strip = true
